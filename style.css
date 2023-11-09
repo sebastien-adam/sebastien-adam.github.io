@@ -1,0 +1,30 @@
+:root {
+    --col-bg: cornflowerblue;    
+    
+    --col-h1: whitesmoke;
+    --col-h2: rgb(147, 60, 60);
+
+}
+
+body {
+    background-color: var(--col-bg);
+    width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: var(--col-h1);
+}
+
+h2 {
+    color: var(--col-h2);
+    text-align: center;
+    font-size: 8em;
+}
