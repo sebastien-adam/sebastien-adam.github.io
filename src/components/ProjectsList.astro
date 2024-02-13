@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import sillyGallery from '../assets/sillyhandpoke-mobile-gallery.png'
+import sillyHomepage from '../assets/sillyhandpoke-mobile-homepage.png'
+---
+
+<section class="bg-white dark:bg-gray-900" id="projects">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white"
+      >
+        Voici une liste de projets sur lesquels j'ai pu travailler:
+      </h2>
+      <p class="mb-4 font-light"></p>
+      <a
+        href="/projects"
+        class="inline-flex items-center font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
+      >
+        Voir la liste complète
+        <svg
+          class="ml-1 w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"></path></svg
+        >
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white dark:bg-gray-900">
+  <div
+    class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+  >
+    <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+      <h3
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+      >
+        SillyHanpoke <span class="text-2xl mb-4 font-light">site vitrine d'un salon de tatouage</span>
+      </h3>
+      <p class="mb-4">
+        Un site web entièrement écrit à la main à partir de zéro, sans librairie additionelles. Du pure HTML/CSS/JS, SEO friendly, accéssible et inclusif, des performances optimales, 100% validé W3C et un score de 100 sur Lighthouse.
+      </p>
+      <a
+        href="https://sillyhandpoke.fr/" target="_blank"
+        class="inline-flex items-center font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
+      >
+        Voir le site web
+        <svg
+          class="ml-1 w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"></path></svg
+        >
+      </a>
+    </div>
+    <div class="grid grid-cols-2 gap-4 mt-8">
+        <Image class="w-full shadow-xl aspect-thumbnail object-cover rounded-lg" src={sillyGallery} alt="le site web de SillyHanpoke - gallery photo" width="377" height="811" format="webp"/>
+        <Image class="mt-4 w-full lg:mt-10 shadow-xl aspect-thumbnail object-cover rounded-lg" src={sillyHomepage} alt="le site web de SillyHanpoke - homepage" width="377" height="811" format="webp"/>
+    </div>
+  </div>
+</section>
