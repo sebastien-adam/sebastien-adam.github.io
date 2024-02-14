@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+type Props = CollectionEntry<"projects">["data"];
+
+const { title, subtitle, description, link, images, alts } = Astro.props;
+---
+
+<Layout title={title}>
+  <Navigation />
+  <section class="bg-white dark:bg-gray-900">
+    <div
+      class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+    >
+      <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+        <h3
+          class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+        >
+          {title}
+          <span class="text-2xl mb-4 font-light">{subtitle}</span>
+        </h3>
+        <p class="mb-4">
+          {description}
+        </p>
+      </div>
+      <a
+        href={link}
+        target="_blank"
+        class="inline-flex items-center font-medium  dark:text-primary-500 dark:hover:text-primary-700"
+      >
+        Voir le site web
+        <svg
+          class="ml-1 w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"></path></svg
+        >
+      </a>
+      <div class="grid grid-cols-2 gap-4 mt-8">
+        <Image
+          class="w-full shadow-xl aspect-thumbnail object-cover rounded-lg"
+          src={images[0]}
+          alt={alts[0]}
+          width="377"
+          height="811"
+          format="webp"
+        />
+        <Image
+          class="mt-4 w-full lg:mt-10 shadow-xl aspect-thumbnail object-cover rounded-lg"
+          src={images[1]}
+          alt={alts[1]}
+          width="377"
+          height="811"
+          format="webp"
+        />
+        <div class="flex justify-center mx-auto">
+        <button type="button" class=" font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 items-center"><a href="/projects">Retour aux projets</a></button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

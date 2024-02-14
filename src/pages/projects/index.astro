@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectsList from "../../components/ProjectsList.astro";
+
+const pageTitle = "Liste des projets de Sébastien ADAM";
+// const allProject = await getCollection("projects");
+---
+
+<Layout title={pageTitle}>
+  <Navigation />
+  <ProjectsList />
+  <Footer />
+</Layout>
