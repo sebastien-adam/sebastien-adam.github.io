@@ -13,6 +13,7 @@ const projectsCollection = defineCollection({
       alts: z.array(z.string()),
       link: z.string(),
       tags: z.array(z.string()),
+      sizes: z.array(z.object({width: z.number(), height: z.number()})),
       featured: z.boolean()
     })
 });

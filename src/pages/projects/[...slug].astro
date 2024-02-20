@@ -1,19 +1,81 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import ProjectMarkdownLayout from '../../layouts/ProjectMarkdownLayout.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import ProjectMarkdownLayout from "../../layouts/ProjectMarkdownLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import { Image } from "astro:assets";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
-  const projectEntries = await getCollection('projects');
-  return projectEntries.map(entry => ({
-    params: { slug: entry.slug }, 
-    props: entry ,
+  const projectEntries = await getCollection("projects");
+  return projectEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: entry,
   }));
 }
-type Props = CollectionEntry<'projects'>;
+type Props = CollectionEntry<"projects">;
 
 const entry = Astro.props;
 const { Content } = await entry.render();
 ---
-<ProjectMarkdownLayout {...entry.data}>
-<Content />
-</ProjectMarkdownLayout>
+
+<Layout title={entry.data.title}>
+  <Navigation />
+
+  <section class="bg-gray-900">
+    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+        <div class="font-light  sm:text-lg text-gray-400">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{entry.data.title}
+              </h2>
+              <h3 class="text-2xl mb-4 font-light">{entry.data.subtitle}</h3>
+              <a
+          href={entry.data.link}
+          target="_blank"
+          class="flex items-end justify-end font-medium text-primary-500 hover:text-primary-700"
+        >
+          Voir le site web
+          <svg
+            class="ml-1 w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"></path></svg
+          >
+        </a>
+            <div class="my-4 prose dark:prose-invert prose-xl overflow-visible relative text-gray-200"> <Content />
+              <div class="flex justify-center mx-auto my-4 mt-8">
+                <button
+                  type="button"
+                  class="font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-gray-800 text-white border-gray-600 hover:bg-gray-700 hover:border-gray-600 focus:ring-gray-700 items-center"
+                  ><a href="/projects">Retour aux projets</a></button
+                >
+              </div></div>
+            
+        </div>
+        <div class="mt-24 lg:sticky top-4 flex items-start h-full ">
+          <Image
+          class="w-full shadow-xl aspect-thumbnail rounded-lg"
+          src={entry.data.images[0]}
+          alt={entry.data.alts[0]}
+          width={entry.data.sizes[0].width}
+          height={entry.data.sizes[0].height}
+          format="webp"
+        />
+      </div>
+      <Image
+        class="mt-4 w-full lg:mt-10 shadow-xl rounded-lg"
+        src={entry.data.images[1]}
+        alt={entry.data.alts[1]}
+        width="377"
+        height="811"
+        format="webp"
+      />
+        
+    </div>
+</section>
+</Layout>
+
+<Footer />
