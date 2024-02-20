@@ -4,11 +4,11 @@ subtitle: "Installation artistique interactive"
 pubDate: 2024-02-19
 description: 'Une installation artistique audio/visuelles interactive '
 author: 'Sébastien ADAM'
-images: ['./3_crashserver_inextricable_overview.jpg', './3_crashserver_inextricable_rez.jpg']
+images: ['./3_crashserver_inextricable_overview.webp', './3_crashserver_inextricable_rez.webp']
 alts: ["installation artistique inextricable, vue d'ensemble", "installation artistique inextricable, rez like"]
 link: 'https://crashserver.fr/inextricable-presentation/'
 tags: ["python", "C++", "arduino", "hybrid"]
-sizes: [{width: 3468, height: 4624}, {width: 2268, height: 4032}]
+sizes: [{width: 1080, height: 1440}, {width: 1080, height: 1920}]
 featured: true
 ---
 

@@ -69,8 +69,8 @@ const { Content } = await entry.render();
         class="mt-4 w-full lg:mt-10 shadow-xl rounded-lg"
         src={entry.data.images[1]}
         alt={entry.data.alts[1]}
-        width="377"
-        height="811"
+        width={entry.data.sizes[1].width}
+        height={entry.data.sizes[1].height}
         format="webp"
       />
         
