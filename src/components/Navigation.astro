@@ -1,4 +1,10 @@
-<nav class=" border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-800">
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+const active = "bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 text-white";
+---
+
+<nav class="border-b border-b-primary-600 px-4 lg:px-6 py-2.5 bg-gray-800">
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <div class="flex items-center lg:order-2">
             <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm  rounded-lg lg:hidden  focus:outline-none focus:ring-2  text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false" id="mobile-button">
@@ -10,10 +16,10 @@
         <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
             <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                 <li>
-                    <a href="/" class="block py-2 pr-4 pl-3  rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 text-white" aria-current="page">Accueil</a>
+                    <a href="/" class="block py-2 pr-4 pl-3  border-b lg:border-0 lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700" aria-current="page">Accueil</a>
                 </li>
                 <li>
-                    <a href="/projects" class="block py-2 pr-4 pl-3  border-b   lg:border-0  lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700">Projets</a>
+                    <a href="/projects" class="block py-2 pr-4 pl-3  border-b lg:border-0 lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700">Projets</a>
                 </li>
                 <li>
                     <a href="/contact" class="block py-2 pr-4 pl-3  border-b   lg:border-0  lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700">Contact</a>

@@ -16,6 +16,8 @@ Pour faire mon portfolio, j'avais envie de tester des nouvelles technologies et 
 
 Après quelques recherches sur les sites statiques hébergés sur github, j'ai décidé d'essayer [Astro](https://astro.build/) et [Tailwind](https://tailwindcss.com/).
 
+J'ai testé d'abord différents thèmes et templates mais je me suis perdu et j'ai préféré partir de 0 et suivre le tutorial pour façonner mon site comme je le voulais.
+
 Après quelques temps passé à paramétrer et comprendre le fonctionnement de ces frameworks, j'ai trouvé très agréable le fait de définir ses layouts en amont et d'écrire ses articles en Markdown directement.
 
 On définit également ses composants (navigation, footer, hero, ...), on compose les pages en les réutilisant et Astro s'occupe de tout pour compiler le site en statique.
