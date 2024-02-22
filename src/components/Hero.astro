@@ -1,8 +1,23 @@
 ---
 import Image from "astro/components/Image.astro"
 import profilPic from "../assets/profile-sebadam.png"
+import profilNeon from "../assets/profile-sebadam-neon.png"
+
 ---
 
+<script>
+    import { animate, stagger } from "motion"
+    animate(
+  "#scanner",
+  { height: 0},
+  { duration: 8, delay: 0.5, easing: "ease-in-out"},
+)
+    animate(
+  "#neon",
+  { opacity: 0},
+  { duration: 8, delay: 0.5, easing: "ease-in-out"},
+)
+</script>
 
 <section>
     <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:pt-16 lg:grid-cols-12 lg:border-b-4 border-b-primary-400 ">
@@ -17,8 +32,12 @@ import profilPic from "../assets/profile-sebadam.png"
                 Contacter
             </a> 
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <Image src={profilPic} alt="Profil de Sébastien ADAM de manière artistique" width="1672" height="1392" class="w-full shadow-xl aspect-thumbnail object-cover rounded-lg"/>
+        <div class="lg:mt-0 lg:col-span-5 lg:flex">
+            <div class="grid">
+                <Image src={profilPic} alt="Profil de Sébastien ADAM" width="1672" height="1392" class="w-full shadow-xl aspect-thumbnail object-cover rounded-lg col-start-1 row-start-1 opacity-1"/>
+                <div id="scanner" class="col-start-1 row-start-1 w-full h-full bg-gray-900"> </div>
+                <Image src={profilNeon} alt="Profil de Sébastien ADAM en neon" width="1672" height="1392" id="neon" class="w-full h-full shadow-xl aspect-thumbnail object-cover col-start-1 row-start-1"/>
+            </div>
         </div>
     </div>
 </section>
