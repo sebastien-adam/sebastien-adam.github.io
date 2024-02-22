@@ -25,4 +25,3 @@ On définit également ses composants (navigation, footer, hero, ...), on compos
 De plus, Astro gère le responsive des images en les convertissant automatique en *Webp* et fournit les tailles adéquates. Il s'occupe également de minifier le *JS* et le *CSS*.
 
 Cerise sur le gateau, pour le déploiement, je suis passé par les **GitHub Actions** qui permettent à chaque *push* sur ma branche principale de lancer le build du site. Super pratique.
-
