@@ -10,7 +10,7 @@ const allProject = await getCollection("projects");
   >
     {
       allProject.map((project) => (
-        <article class="flex flex-col dark:bg-gray-900 border border-gray-800 rounded-lg border-ro my-3">
+        <article class="flex flex-col bg-gray-900 border border-primary-800 shadow-xl rounded-lg border-ro my-3">
           <a
             rel="noopener noreferrer"
             href={`/projects/${project.slug}`}
@@ -20,8 +20,8 @@ const allProject = await getCollection("projects");
               class="w-full h-64 shadow-xl aspect-thumbnail object-cover rounded-lg"
               src={project.data.images[0]}
               alt={project.data.alts[0]}
-              width="377"
-              height="811"
+              width={project.data.sizes[0].width}
+              height={project.data.sizes[0].height}
               format="webp"
             />
           </a>
