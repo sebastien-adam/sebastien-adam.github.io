@@ -10,7 +10,7 @@ const allProject = await getCollection("projects");
   >
     {
       allProject.map((project) => (
-        <article class="flex flex-col bg-gray-900 border border-primary-800 shadow-xl rounded-lg border-ro my-3">
+        <article class="flex flex-col bg-gray-900 border border-primary-800 shadow-xl rounded-lg border-ro my-3 hover:border-primary-200 hover:shadow-primary-800/40 ">
           <a
             rel="noopener noreferrer"
             href={`/projects/${project.slug}`}
