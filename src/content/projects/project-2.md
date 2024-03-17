@@ -9,7 +9,7 @@ alts: ['le site web de CrashServer - homepage', le site web de CrashServer - con
 link: 'https://crashserver.fr/'
 tags: ["css", "html", "wordpress", "cms"]
 sizes: [{width: 1203, height: 862},{width: 1145, height: 1076}]
-featured: true
+featured: false
 ---
 
 Le site web de mon duo de livecoding artistique CrashServer, fait entièrement à l'aide du CMS Wordpress.

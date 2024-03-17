@@ -9,7 +9,7 @@ alts: ["Page d'accueil du portfolio de Sebastien ADAM", "Page d'article du portf
 sizes: [{width: 1285, height: 848}, {width: 1262, height: 638}]
 link: 'https://sebastien-adam.github.io'
 tags: ["astro", "tailwind", "github"]
-featured: true
+featured: false
 ---
 
 Pour faire mon portfolio, j'avais envie de tester des nouvelles technologies et m'intéresser aux frameworks à la mode.
